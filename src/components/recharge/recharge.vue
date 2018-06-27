@@ -22,7 +22,8 @@
 				</li>
 				<li>
 					<span>{{$t('recharge.rec_8')}}:  </span>
-					<input type="text" disabled="true" v-model="form.count"><span>USDT</span>
+					<input type="number" v-model="form.buy_num"><span>USDT</span>
+					<div>总计：{{form.buy_num}}</div>
 				</li>
 			</ul>
 		</div>
@@ -51,7 +52,7 @@ import { MessageBox,Toast   } from 'mint-ui';
 					cardValue:"",
 					cardUsdt:"",
 					surplus:"",
-					count: ""
+					buy_num: 0
 				}
 			}
 		},
@@ -82,7 +83,7 @@ import { MessageBox,Toast   } from 'mint-ui';
 			},
 			operaSubmin:async function(){
 				const res = await fetch.post(
-					utilsApi.apibuyCard, {"user_id":this.$store.state.user.user_id}
+					utilsApi.apibuyCard, {"user_id":this.$store.state.user.user_id,"buy_num":this.form.buy_num}
 				);
 				if(res.data.code==20){
 					this.getCard();
