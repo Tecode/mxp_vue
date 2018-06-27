@@ -22,13 +22,13 @@
 				</li>
         <li>
           <span>{{$t('recharge.rec_8')}}:  </span>
-          <input type="number" v-model="form.buy_num">
+          <input type="number" v-model="buy_num">
         </li>
 			</ul>
 			<div class="quantity">
 				<!--<div class="lable">{{$t('recharge.rec_8')}}</div>-->
 				<!--<input type="number" v-model="form.buy_num">-->
-				<p>{{$t('recharge.rec_9')}}: {{form.buy_num * 500}} USDT</p>
+				<p>{{$t('recharge.rec_9')}}: {{buy_num * 500}} USDT</p>
 			</div>
 		</div>
 		<div class="submit">
@@ -50,11 +50,11 @@ import { MessageBox,Toast   } from 'mint-ui';
     data() {
       return {
         text: this.$t('recharge.rec_5'),
+        buy_num: 1,
         form: {
           cardValue: "",
           cardUsdt: "",
-          surplus: "",
-          buy_num: 1
+          surplus: ""
         }
       }
     },
@@ -85,7 +85,7 @@ import { MessageBox,Toast   } from 'mint-ui';
       },
       operaSubmin: async function () {
         const res = await fetch.post(
-          utilsApi.apibuyCard, {"user_id": this.$store.state.user.user_id, "buy_num": this.form.buy_num}
+          utilsApi.apibuyCard, {"user_id": this.$store.state.user.user_id, "buy_num": this.buy_num}
         );
         if (res.data.code == 20) {
           this.getCard();
@@ -102,10 +102,10 @@ import { MessageBox,Toast   } from 'mint-ui';
       }
     },
     watch: {
-      form:{
+      buy_num:{
         handler(newValue) {
-            if (newValue.buy_num < 1) {
-                this.form.buy_num = 1;
+            if (newValue < 1) {
+                this.buy_num = 1;
             }
         },
         deep: true
