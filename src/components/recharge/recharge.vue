@@ -20,18 +20,16 @@
 					<span>{{$t('recharge.rec_4')}}:  </span>
 					<input type="text" disabled="true" v-model="form.surplus"><span>USDT</span>
 				</li>
-				<li>
-					<span>{{$t('recharge.rec_8')}}:  </span>
-					<input type="number" v-model="form.buy_num"><span>USDT</span>
-					<div>总计：{{form.buy_num}}</div>
-				</li>
 			</ul>
+			<div class="quantity">
+				<div class="lable">{{$t('recharge.rec_8')}}</div>
+				<input type="number" v-model="form.buy_num">
+				<p>总计：{{form.buy_num}}</p>
+			</div>
 		</div>
 		<div class="submit">
 			<button @click="operasave()">{{$t('public.submit')}}</button>
 		</div>
-
-
 	</div>
 </template>
 
@@ -262,6 +260,22 @@ import { MessageBox,Toast   } from 'mint-ui';
 			font-size:.19rem;
 			color: #734416;
 			outline: none;
+		}
+	}
+	.quantity {
+		padding: 0 .1rem;
+		color: #7d7358;
+		input {
+			outline: none;
+			width: 100%;
+			height: .3rem;
+			text-align: right;
+		}
+		.lable {
+			line-height: .4rem;
+		}
+		p {
+			text-align: right;
 		}
 	}
 </style>
