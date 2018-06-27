@@ -21,7 +21,7 @@
 					<input type="text" disabled="true" v-model="form.surplus"><span>USDT</span>
 				</li>
 				<li>
-					<span>{{$t('recharge.rec_4')}}:  </span>
+					<span>{{$t('recharge.rec_8')}}:  </span>
 					<input type="text" disabled="true" v-model="form.count"><span>USDT</span>
 				</li>
 			</ul>

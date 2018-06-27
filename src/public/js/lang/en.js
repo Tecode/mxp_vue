@@ -62,7 +62,8 @@ module.exports = {
         rec_4: 'Balance',
         rec_5: 'Point card',
         rec_6: 'Determine the purchase point card?',
-        rec_7: 'Point card recharge success'
+        rec_7: 'Point card recharge success',
+        rec_8: 'Quantity',
     },
     userCenter: {
         userC_1: 'My USDT address',

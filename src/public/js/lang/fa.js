@@ -62,7 +62,8 @@ module.exports = {
         rec_4: 'Solde',
         rec_5: 'Cartes',
         rec_6: "Déterminer l'achat de cartes?",
-        rec_7: 'Carte de recharge réussie'
+        rec_7: 'Carte de recharge réussie',
+        rec_8: 'Quantité'
     },
     userCenter: {
         userC_1: 'Mon adresse de transport',
