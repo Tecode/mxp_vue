@@ -267,11 +267,12 @@ import { MessageBox,Toast   } from 'mint-ui';
 		color: #7d7358;
 		input {
 			outline: none;
-      color: #734416;
+      color: #f8e39e;
 			width: 100%;
 			height: .3rem;
-			text-align: right;
-      border: 1px solid #734416;
+      border: 1px solid #4e4d3f;
+      background-color: rgba(35, 35, 38, .4);
+      text-indent: .1rem;
 		}
 		.lable {
 			line-height: .4rem;
