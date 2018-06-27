@@ -3,7 +3,7 @@
 		<Header :text="text"/>
 		<div class="identity_content">
 			<!--充币地址-->
-			<ul>												    	   	
+			<ul>
 				<!-- <li>
 					<span>点卡购买</span>
 					<span>{{SuccessAddress.pointcard}}点</span>
@@ -267,15 +267,18 @@ import { MessageBox,Toast   } from 'mint-ui';
 		color: #7d7358;
 		input {
 			outline: none;
+      color: #734416;
 			width: 100%;
 			height: .3rem;
 			text-align: right;
+      border: 1px solid #734416;
 		}
 		.lable {
 			line-height: .4rem;
 		}
 		p {
 			text-align: right;
+      line-height: .4rem;
 		}
 	}
 </style>
