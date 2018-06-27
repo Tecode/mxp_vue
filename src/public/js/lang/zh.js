@@ -64,6 +64,7 @@ module.exports = {
         rec_6: '确定购买点卡?',
         rec_7: '点卡充值成功',
         rec_8: '数量',
+        rec_9: '总计',
     },
     userCenter: {
         userC_1: '我的USDT地址',

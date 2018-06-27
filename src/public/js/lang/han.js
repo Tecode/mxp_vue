@@ -64,6 +64,7 @@ module.exports = {
         rec_6: '카드 구매 확정? 구매 포인트 확정?',
         rec_7: '포인트 카드 충전 성공',
         rec_8: '수량',
+        rec_9: '총계',
     },
     userCenter: {
         userC_1: '나의 U - SDT 주소',
