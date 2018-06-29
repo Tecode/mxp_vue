@@ -64,6 +64,7 @@ module.exports = {
         rec_6: 'Determine the purchase point card?',
         rec_7: 'Point card recharge success',
         rec_8: 'Quantity',
+        rec_9: 'Consumption',
     },
     userCenter: {
         userC_1: 'My USDT address',
@@ -102,7 +103,7 @@ module.exports = {
         tibi_1: 'Withdraw money',
         tibi_2: 'Currency record',
         tibi_3: 'Currency',
-        tibi_4: 'Currency address',
+        tibi_4: 'Currency account',
         tibi_5: 'Number',
         tibi_6: 'Available',
         tibi_7: 'Support only internal currency',

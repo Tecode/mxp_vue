@@ -64,6 +64,7 @@ module.exports = {
         rec_6: '確定購買點卡？',
         rec_7: '點卡充值成功',
         rec_8: '數量',
+        rec_9: '消費',
     },
     userCenter: {
         userC_1: '我的USDT地址',
@@ -102,7 +103,7 @@ module.exports = {
         tibi_1: '提幣',
         tibi_2: '提幣記錄',
         tibi_3: '幣種',
-        tibi_4: '提幣地址',
+        tibi_4: '提幣賬號',
         tibi_5: '數量',
         tibi_6: '可用',
         tibi_7: '僅支持內部提幣',

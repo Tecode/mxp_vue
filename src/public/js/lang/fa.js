@@ -63,7 +63,8 @@ module.exports = {
         rec_5: 'Cartes',
         rec_6: "Déterminer l'achat de cartes?",
         rec_7: 'Carte de recharge réussie',
-        rec_8: 'Quantité'
+        rec_8: 'Quantité',
+        rec_9: 'Consommation',
     },
     userCenter: {
         userC_1: 'Mon adresse de transport',
@@ -102,7 +103,7 @@ module.exports = {
         tibi_1: 'Extraction de pièces de monnaie',
         tibi_2: "D'extraction de pièces de monnaie",
         tibi_3: 'Monnaie',
-        tibi_4: 'Une extraction de pièces de monnaie',
+        tibi_4: 'Compte de devise',
         tibi_5: 'Quantité',
         tibi_6: 'Disponible',
         tibi_7: 'Seulement de soutien interne de pièces de monnaie',

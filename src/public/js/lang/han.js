@@ -64,6 +64,7 @@ module.exports = {
         rec_6: '카드 구매 확정? 구매 포인트 확정?',
         rec_7: '포인트 카드 충전 성공',
         rec_8: '수량',
+        rec_9: '소비',
     },
     userCenter: {
         userC_1: '나의 U - SDT 주소',
@@ -102,7 +103,7 @@ module.exports = {
         tibi_1: '화폐를 제출하다',
         tibi_2: '조화 제출 기록.',
         tibi_3: '화폐의 종류',
-        tibi_4: '조폐 주소',
+        tibi_4: '통화 계정',
         tibi_5: '수량',
         tibi_6: '수량',
         tibi_7: '내부 지폐만 지원하다',

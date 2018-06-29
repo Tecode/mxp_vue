@@ -24,7 +24,7 @@
 			<div class="quantity">
 				<div class="lable">{{$t('recharge.rec_8')}}</div>
 				<input type="number" v-model="form.buy_num">
-				<p>总计：{{form.buy_num}}</p>
+				<p>{{$t('recharge.rec_9')}}：{{form.buy_num}}</p>
 			</div>
 		</div>
 		<div class="submit">

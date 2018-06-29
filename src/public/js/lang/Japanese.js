@@ -63,7 +63,8 @@ module.exports = {
         rec_5: '点々カード',
         rec_6: 'カードの購入を確定しますか？?',
         rec_7: 'リクエストに成功する',
-        rec_8: '数量'
+        rec_8: '数量',
+        rec_9: '消費'
     },
     userCenter: {
         userC_1: '私のUS DTアドレス',
@@ -102,7 +103,7 @@ module.exports = {
         tibi_1: '貨幣を提げる',
         tibi_2: '貨幣記録',
         tibi_3: '貨幣種',
-        tibi_4: '貨幣の住所',
+        tibi_4: '通貨口座',
         tibi_5: '数量',
         tibi_6: '利用可能',
         tibi_7: '内訳だけを支持する',
