@@ -64,7 +64,7 @@ module.exports = {
         rec_6: 'カードの購入を確定しますか？?',
         rec_7: 'リクエストに成功する',
         rec_8: '数量',
-        rec_9: '消費'
+        rec_9: '消費',
     },
     userCenter: {
         userC_1: '私のUS DTアドレス',

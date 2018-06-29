@@ -3,7 +3,7 @@
 		<Header :text="text"/>
 		<div class="identity_content">
 			<!--充币地址-->
-			<ul>												    	   	
+			<ul>
 				<!-- <li>
 					<span>点卡购买</span>
 					<span>{{SuccessAddress.pointcard}}点</span>
@@ -20,11 +20,15 @@
 					<span>{{$t('recharge.rec_4')}}:  </span>
 					<input type="text" disabled="true" v-model="form.surplus"><span>USDT</span>
 				</li>
+        <li>
+          <span>{{$t('recharge.rec_8')}}:  </span>
+          <input type="number" v-model="buy_num">
+        </li>
 			</ul>
 			<div class="quantity">
-				<div class="lable">{{$t('recharge.rec_8')}}</div>
-				<input type="number" v-model="form.buy_num">
-				<p>{{$t('recharge.rec_9')}}：{{form.buy_num}}</p>
+				<!--<div class="lable">{{$t('recharge.rec_8')}}</div>-->
+				<!--<input type="number" v-model="form.buy_num">-->
+				<p>{{$t('recharge.rec_9')}}: {{buy_num * 500}} USDT</p>
 			</div>
 		</div>
 		<div class="submit">
@@ -40,64 +44,74 @@ import fetch from "@/utils/fetch";
 import utilsApi from "@/utils/utilsApi";
 import { MessageBox,Toast   } from 'mint-ui';
 	export default {
-		components:{
-			Header
-		},
-		data() {
-			return {
-				text:this.$t('recharge.rec_5'),
-				form:{
-					cardValue:"",
-					cardUsdt:"",
-					surplus:"",
-					buy_num: 0
-				}
-			}
-		},
-		created: function() {
-			this.getCard();
-		},
-		methods: {
-			getCard:async function(){
-				const res = await fetch.post(
-					utilsApi.apiCard, {"user_id":this.$store.state.user.user_id,"type":this.$store.state.user.type}
-				);
-				if(res){
-					this.form=res.data.data;
-				}
-			},
-			operasave(){
-				MessageBox({
-					title: this.$t('public.prompt'),
-					message: this.$t('recharge.rec_6'),
-					showCancelButton:true,
-					confirmButtonText: this.$t('public.sure'),
-					cancelButtonText:this.$t('public.cancel')
-				}).then(action => {
-					if (action == 'confirm') {     //确认的回调
-					this.operaSubmin();
-					}
-				});
-			},
-			operaSubmin:async function(){
-				const res = await fetch.post(
-					utilsApi.apibuyCard, {"user_id":this.$store.state.user.user_id,"buy_num":this.form.buy_num}
-				);
-				if(res.data.code==20){
-					this.getCard();
-					Toast({
-						message:this.$t('recharge.rec_7'),
-						duration:3000
-					});
-				}else{
-					Toast({
-						message:res.data.msg,
-						duration:3000
-					});
-				}
-			}
-		}
-	}
+    components: {
+      Header
+    },
+    data() {
+      return {
+        text: this.$t('recharge.rec_5'),
+        buy_num: 1,
+        form: {
+          cardValue: "",
+          cardUsdt: "",
+          surplus: ""
+        }
+      }
+    },
+    created: function () {
+      this.getCard();
+    },
+    methods: {
+      getCard: async function () {
+        const res = await fetch.post(
+          utilsApi.apiCard, {"user_id": this.$store.state.user.user_id, "type": this.$store.state.user.type}
+        );
+        if (res) {
+          this.form = res.data.data;
+        }
+      },
+      operasave(){
+        MessageBox({
+          title: this.$t('public.prompt'),
+          message: this.$t('recharge.rec_6'),
+          showCancelButton: true,
+          confirmButtonText: this.$t('public.sure'),
+          cancelButtonText: this.$t('public.cancel')
+        }).then(action => {
+          if (action == 'confirm') {     //确认的回调
+            this.operaSubmin();
+          }
+        });
+      },
+      operaSubmin: async function () {
+        const res = await fetch.post(
+          utilsApi.apibuyCard, {"user_id": this.$store.state.user.user_id, "buy_num": this.buy_num}
+        );
+        if (res.data.code == 20) {
+          this.getCard();
+          Toast({
+            message: this.$t('recharge.rec_7'),
+            duration: 3000
+          });
+        } else {
+          Toast({
+            message: res.data.msg,
+            duration: 3000
+          });
+        }
+      }
+    },
+    watch: {
+      buy_num:{
+        handler(newValue) {
+            if (newValue < 1) {
+                this.buy_num = 1;
+            }
+        },
+        deep: true
+      }
+    }
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -267,15 +281,19 @@ import { MessageBox,Toast   } from 'mint-ui';
 		color: #7d7358;
 		input {
 			outline: none;
+      color: #f8e39e;
 			width: 100%;
 			height: .3rem;
-			text-align: right;
+      border: 1px solid #4e4d3f;
+      background-color: rgba(35, 35, 38, .4);
+      text-indent: .1rem;
 		}
 		.lable {
 			line-height: .4rem;
 		}
 		p {
 			text-align: right;
+      line-height: .4rem;
 		}
 	}
 </style>
